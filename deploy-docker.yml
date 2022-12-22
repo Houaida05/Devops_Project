@@ -1,9 +1,6 @@
 ---
 - hosts: 192.168.1.152
   become: true
-  vars:
-    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
-    ansible_user: vagrant
   tasks:
     - name: Pull default Docker image
       shell: "sudo docker pull {{ default_container_image }}:{{DOCKER_TAG}}"
